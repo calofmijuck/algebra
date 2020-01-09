@@ -1,0 +1,5 @@
+algebra.pdf
+*.synctex.gz
+*.toc
+*.log
+*.aux
