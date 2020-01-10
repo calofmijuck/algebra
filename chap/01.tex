@@ -139,13 +139,26 @@ Alway remember: \textbf{우리가 아는 것은 행렬 뿐이다. 어떤 수학�
 		\item $L(M(v)) = (LM)(v)$ \quad ($L, M \in \mf{L}(V, V)$, $v\in V$)
 	\end{enumerate}
 \end{enumerate}
+We say that $V$ is an $\mf{L}(V, V)$-module with respect to the \textbf{natural action} of $\mf{L}(V, V)$. In short, $\mf{L}(V, V)$ \textbf{acts naturally} on $V$.\\
+\\
+\prob{1.1.21.} First, we know that $F[t]$ is a ring under multiplication, and $V$ is an abelian group under addition. For $v, w\in V$, $f(t), g(t)\in F[t]$,
+\begin{enumerate}
+	\item $f(t)\cdot (v+w) = f(T)(v+w) = f(T)(v)+f(T)(w) = f(t)\cdot v + f(t)\cdot w$
+	\item $(f(t)+g(t))\cdot v = (f(T) + g(T))(v) = f(T)(v) + g(T)(v) = f(t)\cdot v + g(t)\cdot v$
+	\item $(f(t)g(t))\cdot v = (f(T)g(T))(v) = f(T)(g(T)(v)) = f(T)(g(t)\cdot v) = f(t)\cdot (g(t)\cdot v)$
+\end{enumerate}
+Thus $V$ is an $F[t]$-module.\\
+\\
+\prob{1.1.22.} No, $\R$ is not an $\R[t]$-module. For $\alpha, \beta\in \R$ and $f(t)\in \R[t]$, $f(t)\cdot(\alpha + \beta) = f(\alpha + \beta)$, and $f(t)\cdot \alpha + f(t)\cdot \beta = f(\alpha) + f(\beta)$.
+But generally, $f(\alpha + \beta) \neq f(\alpha) + f(\beta)$. The difference between the previous exercise is that $f(T) : V\ra V$ is a \textit{linear} operator, whereas (function) $f: \R \ra \R$ is non-linear in general.
 
-
-
-
-
-
-
-
-
-\pagebreak
+\subsection{Elementary Properties of Rings}
+\prob{1.2.2.} Use associativity and commutativity.
+\begin{enumerate}
+	\item $-a-b + a + b = -a +(-b) + a + b = -a + a + b + (-b) = (-a+a) + (b+(-b)) = 0 + 0 = 0$. Therefore $-a-b$ is the inverse of $a+b$. Thus $-(a+b) = -a-b$.
+	\item $a + (-a) = 0$. The inverse of $-a$ is $a$. Thus $-(-a) = a$.
+	\item (Induction) For $n = 0, 1$, trivial. For $n\geq 1$, suppose $-(na) = (-n)a$, which means that $(-n)a + na = 0$. Then $(n+1)a + (-(n+1))a = na + a + (-n)a + (-a)$, by associativity. Since $A$ is abelian, this is equal to $na + (-n)a + a + (-a) = 0 + 0 = 0$. Thus $-(n+1)a = (-(n+1))a$. For $n < 0$, substitute $m = -n > 0$. Then we need to show that $-(-ma) = ma$. The equation follows directly from (2), and the given property holds for all $n\in \Z$.
+	\item No, Consider an abelian group $(\{0, x\}, +)$ ($x\neq 0$), with operations defined as
+	$$0 + 0 = 0,\; 0 + x = x,\; x + 0 = x,\; x + x = 0$$
+	Then $x + x = 2x = 0$, but $x\neq 0$. Also consider $\mu_3 = \{x \mid x^3 = 1, x \in \C\}$, then $3x = 0$, but $x $ need not be $0$.
+\end{enumerate}
