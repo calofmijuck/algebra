@@ -158,7 +158,6 @@ But generally, $f(\alpha + \beta) \neq f(\alpha) + f(\beta)$. The difference bet
 	\item $-a-b + a + b = -a +(-b) + a + b = -a + a + b + (-b) = (-a+a) + (b+(-b)) = 0 + 0 = 0$. Therefore $-a-b$ is the inverse of $a+b$. Thus $-(a+b) = -a-b$.
 	\item $a + (-a) = 0$. The inverse of $-a$ is $a$. Thus $-(-a) = a$.
 	\item (Induction) For $n = 0, 1$, trivial. For $n\geq 1$, suppose $-(na) = (-n)a$, which means that $(-n)a + na = 0$. Then $(n+1)a + (-(n+1))a = na + a + (-n)a + (-a)$, by associativity. Since $A$ is abelian, this is equal to $na + (-n)a + a + (-a) = 0 + 0 = 0$. Thus $-(n+1)a = (-(n+1))a$. For $n < 0$, substitute $m = -n > 0$. Then we need to show that $-(-ma) = ma$. The equation follows directly from (2), and the given property holds for all $n\in \Z$.
-	\item No, Consider an abelian group $(\{0, x\}, +)$ ($x\neq 0$), with operations defined as
-	$$0 + 0 = 0,\; 0 + x = x,\; x + 0 = x,\; x + x = 0$$
-	Then $x + x = 2x = 0$, but $x\neq 0$. Also consider $\mu_3 = \{x \mid x^3 = 1, x \in \C\}$, then $3x = 0$, but $x $ need not be $0$.
+	\item No, Consider an abelian group $(\Z_2, +)$.
+	Then $2(1) = 1 + 1 = 0$, but $1\neq 0$.\footnote{Group of 2 elements is unique, up to isomorphism.} Also consider $(\Z_3, +)$. Then $3(1) = 1 + 1 + 1 = 0$, but $1 \neq 0$.
 \end{enumerate}
