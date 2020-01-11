@@ -150,7 +150,7 @@ We say that $V$ is an $\mf{L}(V, V)$-module with respect to the \textbf{natural 
 Thus $V$ is an $F[t]$-module.\\
 \\
 \prob{1.1.22.} No, $\R$ is not an $\R[t]$-module. For $\alpha, \beta\in \R$ and $f(t)\in \R[t]$, $f(t)\cdot(\alpha + \beta) = f(\alpha + \beta)$, and $f(t)\cdot \alpha + f(t)\cdot \beta = f(\alpha) + f(\beta)$.
-But generally, $f(\alpha + \beta) \neq f(\alpha) + f(\beta)$. The difference between the previous exercise is that $f(T) : V\ra V$ is a \textit{linear} operator, whereas (function) $f: \R \ra \R$ is non-linear in general.
+But generally, $f(\alpha + \beta) \neq f(\alpha) + f(\beta)$. The difference between the previous exercise is that $f(T) : V\ra V$ is a \textit{linear} operator, whereas (function) $f: \R \ra \R$ is non-linear in general.\\
 
 \subsection{Elementary Properties of Rings}
 \prob{1.2.2.} Use associativity and commutativity.
@@ -160,4 +160,38 @@ But generally, $f(\alpha + \beta) \neq f(\alpha) + f(\beta)$. The difference bet
 	\item (Induction) For $n = 0, 1$, trivial. For $n\geq 1$, suppose $-(na) = (-n)a$, which means that $(-n)a + na = 0$. Then $(n+1)a + (-(n+1))a = na + a + (-n)a + (-a)$, by associativity. Since $A$ is abelian, this is equal to $na + (-n)a + a + (-a) = 0 + 0 = 0$. Thus $-(n+1)a = (-(n+1))a$. For $n < 0$, substitute $m = -n > 0$. Then we need to show that $-(-ma) = ma$. The equation follows directly from (2), and the given property holds for all $n\in \Z$.
 	\item No, Consider an abelian group $(\Z_2, +)$.
 	Then $2(1) = 1 + 1 = 0$, but $1\neq 0$.\footnote{Group of 2 elements is unique, up to isomorphism.} Also consider $(\Z_3, +)$. Then $3(1) = 1 + 1 + 1 = 0$, but $1 \neq 0$.
+\end{enumerate}~
+\\
+\prob{1.2.3.} \textbf{(Additive Exponent Law)} (Induction on $n$)
+\begin{enumerate}
+	\item For $n = 0$, $ma + na = ma + 0 = ma = (m+0)a$. Suppose for $n\geq 0$, $ma+na = (m+n)a$. $ma+(n+1)a = ma+na+a = (m+n)a + a = (m+n+1)a$. Now, for $n \leq 0$, suppose $ma+na = (m+n)a$. $ma + (n-1)a = ma + na - a = (m+n)a - a = (m+n-1)a$. Thus the given statement is true for all $m, n\in \Z$.
+	\item For $n = 0$, $na+nb = 0 + 0 = 0 = 0(a+b)$. Suppose for $n\geq 0$, the equation holds. Then $(n+1)a+(n+1)b = na + a + nb + b = n(a+b) + (a+b) = (n+1)(a+b)$. Now, for $n\leq 0$, suppose the equation holds. Then $(n-1)a+(n-1)b = na - a + nb - b = n(a+b)-(a+b) = (n-1)(a+b)$. Thus the given statement is true for all $n\in \Z$.
+	\item For $n = 0$, $m(na) = m(0) = 0 = (0)a = (mn)a$. Suppose for $n\geq 0$ the equation holds. Then $m((n+1)a)=m(na + a) = m(na) + ma = (mn)a + ma = (mn+m)a = (m(n+1))a$. ($\because (1), (2)$) Now, for $n\leq 0$, suppose the equation holds. Then $m((n-1)a) = m(na - a) = m(na)-ma = (mn)a-ma = (mn-m)a = (m(n-1))a$. Thus the given statement is true for all $m, n\in \Z$.
 \end{enumerate}
+Any abelian group is a $\Z$-module.\\
+\\
+이제부터는 $R = (R, +, \gop)$ 은 항상 ring 을 뜻한다.\\
+\\
+\obs{1.2.4.} $a, b\in R$ 이면,
+\begin{enumerate}
+	\item $0a = 0 = a0$. (단, $0\in R$)
+	\item $(-a)b=-(ab)=a(-b)$. 따라서, $(-ab)$ 의 표기가 가능하다.
+	\item $(-a)\cdot(-b)=ab$.
+\end{enumerate}~
+\pf. (3) $(-a)\cdot(-b) = -(a(-b)) = -(-(ab)) = ab$.\\
+\\
+\prob{1.2.5.} $a, b, a_i, b_j\in R$
+\begin{enumerate}
+	\item (Induction) If $n = 0$, $(0a)b = 0 = 0(ab) = a(0b)$. Suppose for $n\geq 0$, the equation holds. $((n+1)a)b = (na + a)b = (na)b + ab = n(ab) + ab = (n+1)(ab)$, $(na)b + ab = a(nb) + ab = a(nb + b) = a((n+1)b)$. Now for $n\leq 0$, suppose the equation holds. $((n-1)a)b = (na - a)b = (na)b - ab = n(ab) - ab = (n-1)(ab)$, $(na)b - ab = a(nb)-ab = a(nb- b) = a((n-1)b)$. The equation holds for all $n\in \Z$.\footnote{Any ring can be considered as a $\Z$-algebra.}
+	\item (Induction) If $n = 1$, $\left(\sum_{i=1}^{m}a_i\right) \cdot b_1 = \sum_{1\leq i\leq m}a_ib_1$. Suppose for $n\geq 1$, the equation holds. Then $\left(\sum_{i=1}^{m}a_i\right)\cdot \left(\sum_{j=1}^{n+1} b_j\right) =\left(\sum_{i=1}^{m}a_i\right)\cdot \left(\sum_{j=1}^{n} b_j + b_{n+1}\right) = \sum_{1\leq i\leq m}\sum_{1\leq j\leq n} a_ib_j + \sum_{1\leq i\leq m}a_i b_{n+1} = \sum_{1\leq i\leq m}\sum_{1\leq j\leq n+1} a_ib_j$. Thus the equation holds for all $m, n\in \N$.
+\end{enumerate}~
+\\
+\defn{1.2.6.} Ring $R$ 이 다음 조건
+$$ab=ba \quad (a, b\in R)$$
+을 만족하면, $R$ 을 \textbf{commutative ring} 이라고 부른다. 같은 방법으로 \textbf{commutative} $R$-\textbf{algebra} 도 정의한다.\\
+\\
+\defn{1.2.7.} $R$ 이 \textbf{multiplicative identity} 1 을 가지면, $R$ 을 ring with the multiplicative identity 1, 또는 간단히 [\textbf{ring with} 1] 이라고 부른다. 더 간단히 $1\in R$ 으로도 나타낸다.\\
+\\
+\prob{1.2.8.} Suppose the multiplicative identity is not unique. Then there exists two different multiplicative identities $x, y$. ($x\neq y$) But $y = xy = x$, contradicting that they are not equal. Thus the multiplicative identity must be unique.\\
+\\
+Ring with 1 에서는 항상 $1\neq 0$ 이라고 가정한다.
