@@ -194,4 +194,41 @@ $$ab=ba \quad (a, b\in R)$$
 \\
 \prob{1.2.8.} Suppose the multiplicative identity is not unique. Then there exists two different multiplicative identities $x, y$. ($x\neq y$) But $y = xy = x$, contradicting that they are not equal. Thus the multiplicative identity must be unique.\\
 \\
-Ring with 1 에서는 항상 $1\neq 0$ 이라고 가정한다.
+Ring with 1 에서는 항상 $1\neq 0$ 이라고 가정한다.\\
+\\
+\prob{1.2.11.}
+\begin{enumerate}
+	\item $(1_R + \cdots + 1_R)a = 1_R\cdot a + \cdots + 1_R\cdot a = a + \cdots +a = na$
+	\item $(-1_R)a = 1_R\cdot(-a) = -a = (-a)\cdot 1_R = a(-1_R)$
+	\item $(-1_R-\cdots-1_R)a = (-1_R)a + \cdots + (-1_R)a = -a -\cdots -a = (-n)a$ and $-a -\cdots -a =a(-1_R) +\cdots + a(-1_R) = a(-1_R-\cdots-1_R)$
+\end{enumerate}~
+\\
+\textbf{\sffamily Notation 1.2.12.} $1 = 1_R\in R$ 일 때, 위 연습문제 1.2.11 은 $3 = 3_R = 1_R + 1_R+1_R$ 와 같이 표기하여도 별로 혼동이 없음을 보여 주고 있다. 앞으로 그렇게 표기하기로 한다. 조심할 점은 $3\in \Z$ 는 그 어떤 경우에도 zero 일 수 없지만, $3\in R$ 은 zero 일 수도 있고, $-1=5=8\in R$ 일 수도 있다는 점이다. 실제로 $\Z_3$ 에서 그렇다.\\
+\\
+\defn{1.2.13.} $R$ 이 [ring with 1] 이고, $a\in R$ 일 때,
+\begin{center}
+	$ab=1=ba$ 인 $b\in R$ 이 존재
+\end{center}
+하면 $a$ 를 an \textbf{invertible element} 또는 a \textbf{unit} 이라고 부른다. 이때, $b=a\inv$ 로 표기한다. 그리고,
+$$R\cross = \{a\in R \mid a \text{ is a unit}\}$$
+으로 표기하고, $R\cross$ 를 [the \textbf{unit group} in $R$] 이라고 부른다.\\
+\\
+\prob{1.2.14.} Suppose the multiplicative inverse of $a$ is not unique. Then there exists two different inverses $x, y\in R$ ($x\neq y$). By definition, $ax = 1_R = ay \imp x(ax) = x(ay) \imp (xa)x = (xa)y \imp x = y$, contradiction. The inverse is unique, if it exists.\\
+\\
+\prob{1.2.15.} Multiplication is associative, and if $a, b\in R\cross$, $ab\in R\cross$ since $ab\cdot b\inv\cdot a\inv = 1 = b\inv\cdot a\inv\cdot ab$ and $b\inv\cdot a\inv \in R$. The binary operation is well defined. Also $1_R \in R\cross$, which works as an identity element, and for all $a\in R\cross$, $a\inv \in R\cross$ by definition. Thus $R\cross$ is a multiplicative group.\\
+\\
+\prob{1.2.16.}
+\begin{enumerate}
+	\item $1\cdot 1 = 1$, thus $1\in R\cross$.
+	\item In $R$, $b\inv \cdot a\inv$ is the inverse of $ab$. $ab\in R\cross$.
+	\item If $a\in R\cross$, $\exists\,a\inv\in R$, and since the inverse of $a\inv$ is $a\in R$, $a\inv \in R\cross$ and $(a\inv)\inv = a$.
+	\item[(2')] Since $a_1, \dots, a_n\in R\cross$, $a_1\inv, \dots, a_n\inv$ exist in $R$. Because $a_n\inv\cdots a_1\inv$ is the inverse of $a_1\cdots a_n$, $a_1\cdots a_n\in R\cross$. 
+\end{enumerate}~
+\\
+\textbf{\sffamily Question 1.2.18.}
+\begin{enumerate}
+	\item The \textbf{ring of Gaussian integers} 를 $$\Z[\rmbf{i}] = \{m+n \rmbf{i} \in \C \mid m, n\in \Z\}$$ 로 정의하면, $\Z[\rmbf{i}]$ 는 당연히 ring 이 된다. 이 때, $\Z[\rmbf{i}]\cross$ 는? \footnote{$\Z[\rmbf{i}]\cross = \{\pm 1, \pm\rmbf{i}\}$}
+	\item 앞 항을 일반화 하여 $d\in \Z$, $\sqrt{d}\in \Z$ 일 때, $$\Z[\sqrt{d}] = \{m+n\sqrt{d} \in \C\}$$ 로 정의하면 $\Z[\sqrt{d}]$ 도 당연히 ring 이 된다. 이 때, $\Z[\sqrt{d}]\cross$ 는? \footnote{...?}
+\end{enumerate}~
+\\
+\prob{1.2.19.} \textbf{(Pascal's Triangle)}
