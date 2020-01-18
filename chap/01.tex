@@ -260,4 +260,40 @@ Note that this works because $R$ is a commutative ring, and thus the statement h
 \prob{1.2.21.} Since we have the exponential/distributive law, and most importantly, the \textbf{commutative} law, we can carry out most of the calculation easily, just like we learned in middle school.\\
 
 \subsection{Fields and Integral Domain}
-\defn{1.3.1.} ...
+\defn{1.3.1.} $F$ 가 \textbf{commutative} [ring with 1] 일 때, $F$ 가 다음 조건
+\begin{enumerate}
+	\item[{\sffamily (F1)}] $F\cross = F - \{0\}$
+\end{enumerate}
+을 만족하면, $F$ 를 \textbf{field}(\textbf{체}) 라고 부른다. 이는 당연히
+\begin{enumerate}
+	\item[\sffamily (F1)'] $F$ 의 모든 \textbf{non-zero} element 는 invertible
+\end{enumerate}
+과 동치이다.\\
+\\
+\prob{1.3.2.} $F - \{0\}$ is commutative with respect to multiplication, and since $0$ always satisfies commutativity, $F$ is a commutative ring with 1. Now, from {\sffamily (f2)}, we know that every element in $F - \{0\}$ is invertible. (Every element in a group has an inverse) By {\sffamily (F1)'}, $F$ is a field.\\
+\\
+\prob{1.3.3.} \textbf{Typical examples of field}
+\begin{enumerate} 
+	\item $1\in \Q$, commutative, $\Q\cross = \Q - \{0\}$
+	\item $1\in \R$, commutative, $\R\cross = \R - \{0\}$
+	\item $1\in \C$, commutative, $\C\cross = \C - \{0\}$
+	\item $1\in \Q(\sqrt{2})$, commutative, $\Q(\sqrt{2})\cross = \Q - \{0\}$
+	\item $1\in \F_2$, commutative by definition, 0 is not invertible. $\F_2\cross = \F_2 - \{0\}$
+\end{enumerate}~
+\\
+$\F_2$ is the \textbf{finite field} of order 2.\\
+\\
+\prob{1.3.4.} By the definition of additive/multiplicative identity, we can fill out the following Cayley table.
+\begin{center}
+	\begin{tabular}{c|cc}
+		$+$ & 0 & 1 \\ \hline
+		0 & 0& 1\\
+		1 & 1& \\
+	\end{tabular} \qquad
+	\begin{tabular}{c|cc}
+		$\times$ & 0 & 1 \\ \hline
+		0 & & 0\\
+		1 & 0& 1\\
+	\end{tabular}
+\end{center}
+We only need to define the result for $1+1$ and $0 \times 0$.
