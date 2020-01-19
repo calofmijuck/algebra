@@ -287,13 +287,29 @@ $\F_2$ is the \textbf{finite field} of order 2.\\
 \begin{center}
 	\begin{tabular}{c|cc}
 		$+$ & 0 & 1 \\ \hline
-		0 & 0& 1\\
-		1 & 1& \\
+		0 & 0 & 1\\
+		1 & 1 & \\
 	\end{tabular} \qquad
 	\begin{tabular}{c|cc}
 		$\times$ & 0 & 1 \\ \hline
 		0 & & 0\\
-		1 & 0& 1\\
+		1 & 0 & 1\\
 	\end{tabular}
 \end{center}
-We only need to define the result for $1+1$ and $0 \times 0$.
+We only need to define the result for $1+1$ and $0 \times 0$. If $1+1=1$, then the element 1 would not have an additive inverse, so $1+1$ should be 0. Also if $0\times 0 = 1$, then $0 = 0 \times 1 = 0\times(0+1) = 0\times 0 + 0\times 1 = 1 + 0 = 1$, contradicting $0\neq 1$. Thus $0\times 0 = 0$, and we can check that all the other properties hold.
+\begin{center}
+	\begin{tabular}{c|cc}
+		$+$ & 0 & 1 \\ \hline
+		0 & 0 & 1\\
+		1 & 1 & 0\\
+	\end{tabular} \qquad
+	\begin{tabular}{c|cc}
+		$\times$ & 0 & 1 \\ \hline
+		0 & 0 & 0\\
+		1 & 0 & 1\\
+	\end{tabular}
+\end{center}~
+\\
+\prob{1.3.5.} ...\\
+\\
+\defn{1.3.6.} Field $F$ 의 정의에서 $F$ 의 commutativity 조건을 제외하면, $F$ 를 \textbf{division ring} 이라고 부른다. 그리고, non-commutative division ring 은 \textbf{skew-field} 라고 부른다.
