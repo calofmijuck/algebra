@@ -312,4 +312,22 @@ We only need to define the result for $1+1$ and $0 \times 0$. If $1+1=1$, then t
 \\
 \prob{1.3.5.} ...\\
 \\
-\defn{1.3.6.} Field $F$ 의 정의에서 $F$ 의 commutativity 조건을 제외하면, $F$ 를 \textbf{division ring} 이라고 부른다. 그리고, non-commutative division ring 은 \textbf{skew-field} 라고 부른다.
+\defn{1.3.6.} Field $F$ 의 정의에서 $F$ 의 commutativity 조건을 제외하면, $F$ 를 \textbf{division ring} 이라고 부른다. 그리고, non-commutative division ring 은 \textbf{skew-field} 라고 부른다.\\
+\\
+\defn{1.3.8.} $a, b\neq 0$ 이 ring $R$ 의 원소일 때, 만약 $ab=0$ 이면, $a$ 와 $b$ 를 \textbf{zero divisor} 라고 부른다.\\
+\\
+\prob{1.3.9.}
+\begin{enumerate}
+	\item For any non-zero nilpotent element $a \in R$, suppose $m$ is the smallest natural number such that $a^m = 0$. Then $a, a^{m-1}\neq 0$ but $a^m = 0$, and $a$ is indeed a zero divisor.
+	\item Suppose $a$ is a zero divisor. Then there exists two non-zero elements $a, b$ such that $ab = 0$. Since $a\in R\cross$, there exists $a\inv$. Multiplying $a\inv$ on the left gives $a\inv\cdot ab = (a\inv a)b = 1\cdot b = b = 0$, contradicting that $b$ is non-zero. Thus $a$ is not a zero divisor.
+\end{enumerate}~
+\\
+\prob{1.3.10.}
+\begin{enumerate}
+	\item (\mimp) 1.3.9 (2)\\
+	(\mimpb) Suppose $0\neq A\notin \mf{M}_{n, n}(\R)$. Then $A\inv$ does not exist. Then the columns of $A$ are linearly dependent, meaning that there exists $x\neq 0$ such that $Ax=0$. Consider another matrix $B$ where all its columns are $x$. Then $B\neq 0$, but $AB = 0$, contradicting that $A$ is not a zero divisor.
+	\item When $R$ is finite, the answer is no. Suppose a non-zero element $a\in R$ exists, which is neither a zero divisor nor a unit. Consider a map $x\mapsto ax$ for all $x\in R$. If this map is injective, it has to be surjective. Then There exists $x\in R$ such that $ax = 1$, contradicting that $a$ is not a unit. If this map is not injective, there exists $u, v\in R$ ($u\neq v$) such that $au = av$. Then $a(u-v) = 0$, contradicting that $a$ is not a zero divisor. Thus a non-zero element is either a unit or a zero divisor.\\
+	When $R$ is infinite, the answer is yes. Consider $2\in \Z$. $2$ is not a unit, and it is also not a zero divisor. 
+\end{enumerate}~
+\\
+\prob{1.3.11.}
