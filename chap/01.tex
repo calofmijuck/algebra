@@ -331,3 +331,28 @@ We only need to define the result for $1+1$ and $0 \times 0$. If $1+1=1$, then t
 \end{enumerate}~
 \\
 \prob{1.3.11.}
+\begin{enumerate}
+	\item Commutativity and finiteness is trivial from the operation table. And indeed, $a(b+c)=ab+ac$, $(a+b)c = ac+bc$ holds for all $a, b, c\in \Z_4$. Also, $\overline{1}$ is the multiplicative identity.
+	\item $\overline{2}\cdot \overline{2} = \overline{0}$ but $\overline{2} \neq \overline{0}$. Thus $\overline{2}$ is a zero divisor.
+	\item $4 = 1_R + 1_R + 1_R + 1_R = \overline{1} + \overline{1} + \overline{1} +\overline{1} = \overline{2} + \overline{1} + \overline{1} = \overline{3} + \overline{1} = \overline{0} = 0$.
+	\item Multiplication is defined by $\overline{a}\cdot \overline{b}$ = (remainder of $ab$ divided by 4).
+\end{enumerate}~
+\\
+\defn{1.3.13.} $1\in R$ 일 때, $0=n=n\cdot 1_R \in R$ 인 최소의 자연수 $n > 1$ 을 ring $R$ 의 \textbf{characteristic} 이라 부르고, $\ch(R) = n$ 으로 표기한다.\footnote{$n>1$ because if $n = 1$, $0=1$.} 만약 이러한 자연수 $n$ 이 존재하지 않으면, $R$ 은 \textbf{characteristic zero} 라고 하고, $\ch(R) = 0$ 으로 표기한다.\\
+\\
+\defn{1.3.14.} $1\in R$ 일 때, additive group $(R, +)$ 에서 $1_R$ 의 order $\abs{1_R}$ 이 finite 이면 $\ch(R) = \abs{1_R}$ 으로 정의한다. 한편, $\abs{1_R}=\infty$ 이면, $\ch(R)=0$ 으로 정의한다.\\
+\\
+\prob{1.3.15.}\\
+(\mimp) For all $a\in R$, $na = (n\cdot 1_R)a =0\cdot a = 0$.\\
+(\mimpb) Since $na = 0$ for all $a\in R$, $n\cdot 1_R = 0$.\\
+\\
+\prob{1.3.16.}\\
+((1)\miff(2)) Holds by definition.\\
+((2)\miff(3)) Since $a+a = 2a$, the result holds by 1.3.15.\\
+((2)\miff(4)) Move the term $1_R$ to show the result.\\
+\\
+\prob{1.3.17.}
+\begin{enumerate}
+	\item For $\Z, \Q, \R, \C$, $n \cdot 1_R = n$ will never be 0, for all $n > 1$. Thus $\ch(\Z) =\ch(\Q) =\ch(\R) = \ch(\C) = 0$.
+	\item Suppose $\ch(F) = n$, then $n\cdot 1_F = 0$. Since $1_{F[t]} = 1\in F$, we have $n\cdot 1_{F[t]} = 0$. Also because $1_{\mf{M}_{n, n}(F)} = \diag(1_F, \dots, 1_F) = I_n$, we have $n\cdot I_n = \diag(n\cdot 1_F, \dots, n\cdot 1_F) = 0$. Thus $\ch(F) = \ch(F[t]) = \ch(\mf{M}_{n, n}(F)) = n$. (For the proofs of $\ch(F[t]) = \ch(\mf{M}_{n, n}(F)) = n$, the minimality condition holds. If there exists $n > m\in \N - \{1\}$ s.t. $m\cdot 1_F = 0$, it contradicts $\ch(F) = n$.)
+\end{enumerate}
