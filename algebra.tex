@@ -17,10 +17,16 @@
 	right = 20mm
 }
 
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+
 \usepackage{enumitem}
 \setlist[enumerate,1]{label={(\arabic*)}}
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \setcounter{section}{0}
 
 \counterwithin*{footnote}{section}
@@ -58,6 +64,8 @@
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\ch}{char}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Ann}{Ann}
 \newcommand{\nsub}{\mathrel{\unlhd}}
 \newcommand{\pnsub}{\mathrel{\lhd}}
 \newcommand{\mimp}{$\implies$}
@@ -65,6 +73,7 @@
 \newcommand{\miff}{$\iff$}
 \newcommand{\gop}{\text{곱}}
 \newcommand{\sang}{\text{상}}
+\newcommand{\tor}{_{\text{tor}}}
 
 \renewcommand{\headrulewidth}{0.8pt}
 

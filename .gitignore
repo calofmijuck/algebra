@@ -3,3 +3,4 @@ algebra.pdf
 *.toc
 *.log
 *.aux
+*.out
