@@ -466,6 +466,33 @@ When we mention an $R$-module, we implicitly think that $1 \in R$. Moreover, $R$
 	Then it is easy to check that $\mc{A}\times\mc{B}$ is indeed an $R$-algebra.
 \end{enumerate}~
 \\
+\prob{1.4.12.} Define $\Z$-multiplication on ring $R$ as notation {\sffamily 1.2.1}. Then $(R, +, \cdot)$ is a $\Z$-module, and since $R$ is already a ring, $R$ is a $\Z$-algebra. Conversely, if you ignore the $\Z$-multiplication on a $\Z$-algebra, $\Z$-algebra is already a ring.\\
+\\
+\prob{1.4.13.} We have previously shown that $R$ itself is a ring, and an $R$-module. Since $R$ is a commutative ring with 1, for $a, b, c\in R$, $a(bc) = (ab)c = b(ac)$ holds. Thus $R$ is an $R$-algebra.\\
+\\
+\prob{1.4.16.}
+\begin{enumerate}
+	\item Let $f(t), g(t)\in R[t]$. Suppose the leading coefficients of $f(t)$, $g(t)$ are $a_n$ and $b_m$, respectively. ($a_n, b_m\neq 0$) If $f(t)g(t) = 0$, $a_nb_m$ should be 0, and since $R$ is an integral domain, $a_nb_m \neq 0$. Thus $R[t]$ cannot have any zero divisors.
+	\item No. In $\Z/4\Z = \Z_4$, consider $f(t)=1+2t$. Then $f(t)^2 = 1$, so $f(t)\in \Z_4[t]\cross$, but $f(t)\notin \Z_4\cross$.
+	\item Let $f(t) \in R[t]\cross$. Suppose $\deg f(t) \geq 1$. Then $f(t) = \sum_{i=0}^n a_i t^i$ with $a_i\in R$ and $a_n \neq 0$. Let the inverse of $f(t)$ be $g(t)\in R[t]$.
+	\begin{enumerate}
+		\item If $\deg g(t) = 0$, $g(t)$ is a constant, and $f(t)g(t)$ cannot equal 1. (Contradiction)
+		\item If $\deg g(t) \geq 1$, let $g(t) = \sum_{j=0}^m b_j t^j$ with $b_j\in R$ and $b_m \neq 0$. Write 
+		$$f(t) = a_0 + tf_1(t) \quad g(t) = b_0 + tg_1(t)$$
+		, where $f_1(t), g_1(t)\in R[t]$. Then $$f(t)g(t) = a_0b_0 + b_0tf_1(t) + a_0tg_1(t) + t^2f_1(t)g_1(t)$$
+		since $f(t)g(t) = 1$, $a_0b_0 = 1$, $b_0f_1(t) = a_0g_1(t) = f_1(t)g_1(t) = 0$. But since $R$ is an integral domain, we have $a_nb_m\neq 0$ which gives $f_1(t)g_1(t) \neq 0$. (Contradiction)
+	\end{enumerate}
+	Thus $\deg f(t) = 0$, and $f(t) = a_0 \in R$. Now the inverse of $f(t)$ exists if and only if $a_0$ has an inverse. We have proven that $R[t]\cross \subseteq R\cross$. Since $R\cross \subseteq R[t]\cross$ is trivial, we arrive at the conclusion that $R[t]\cross = R\cross$.
+\end{enumerate}~
+\\
+\prob{1.4.17.} Just multiply like normal polynomial multiplication.\\
+\\
+\prob{1.4.18.} Let $A = \begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix} \in \mf{M}_{2, 2}(\Z)$. If $\det A = \pm 1$, $A\inv = \begin{pmatrix}
+d & -b \\ -c & a
+\end{pmatrix} \in \mf{M}_{2, 2}(\Z)$. Thus $A\in \mf{M}_{2, 2}(\Z)\cross$. Conversely, if $A\in \mf{M}_{2, 2}(\Z)\cross$, an inverse of $A$ exists, and $A\cdot A\inv = I_2$. From the properties of determinants, $1 = \det (A\cdot A\inv) = (\det A)(\det A\inv)$ and since $A, A\inv \in \mf{M}_{2, 2}(\Z)$, the determinants should be an integer. Thus $\det A = \pm 1$.
+$$\mf{M}_{2, 2}(\Z)\cross = \{A\in \mf{M}_{2, 2}(\Z) \mid \det A = \pm 1\}$$
 
 \subsection{Isomorphism}
 
