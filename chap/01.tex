@@ -419,11 +419,53 @@ When we mention an $R$-module, we implicitly think that $1 \in R$. Moreover, $R$
 	$$\ann(N) = \ann_R(N) = \{r\in R\mid rx = 0 \text{ for all } x\in N\}$$
 	and if $S\subseteq R$, we define $\Ann(S)$ as
 	$$\Ann(S) = \Ann_M(S) = \{x\in M \mid rx = 0 \text{ for all }r\in S\}$$
-\end{enumerate}
+\end{enumerate}~
+\\
 \prob{1.4.6.}
 \begin{enumerate}
-	\item 
-\end{enumerate}
+	\item Since $r\in R\cross$, there exists an inverse. If $rx = 0$, $x = r\inv \cdot 0 = 0$. Thus $\Ann_M(r) = \{0\}$.
+	\item Because $F$ is a division ring. So if $r_x\cdot x = 0$ for some non-zero $r_x\in R$, $\exists r_x\inv$, and $x = 0$. Thus $M\tor = \{0\}$ and $F$-vector space is torsion-free.
+	\item $\Ann_{\R^n}(A) = \{x \in \R^n \mid Ax = 0\} = \ker L_A$.
+\end{enumerate}~
+\\
+\prob{1.4.7.}
+\begin{enumerate}
+	\item $\ann_{F[t]}(V) = \{f(t)\in F[t]\mid f(T)\cdot v = 0 \text{ for all } v \in V\}$. Since $f(T)\cdot v = 0$ for all $v\in V$ if and only if $f(T) = 0$, $\ann_{F[t]}(V) = \mc{I}_T$.
+	\item Trivial.
+	\item $V\tor = \{v\in V\mid f_v(T)\cdot v = 0 \text{ for some non-zero } f_v(t)\in F[t]\}$. Take $f_v(t) = \phi_T(t)$ then $\phi_T(T)\cdot v = 0$ for all $v\in V$, by Cayley-Hamilton Theorem. Thus $V\tor = V$, and $V$ is a torsion $F[t]$-module.
+\end{enumerate}~
+\\
+\obs{1.4.8.} \textbf{Abelian group} = \textbf{$\Z$-module}.\\
+\\
+\prob{1.4.9.}
+\begin{enumerate}
+	\item Suppose a finite abelian group $A$ has $k$ elements. It is trivial that $0 \in A\tor$. So suppose for any non-zero $a\in A$, consider the elements $1a, \dots, ka$. These are elements of $A$ and there are $k$ of them. We have two cases.
+	\begin{enumerate}
+		\item If $na = 0$ for some $n = 1, 2, \dots, k$, then $a \in A\tor$.
+		\item If $na \neq 0$ for all $n$, by the pigeonhole principle, there exists $i, j\in \{1, 2, \dots, k\}$ such that $ia = ja$. ($i\neq j$) Then $(i - j)a = 0$, thus $a\in A\tor$.
+	\end{enumerate}
+	Therefore $A\subseteq A\tor$, (and since $A\tor\subseteq A$) $A = A\tor$, and finite abelian group is a torsion $\Z$-module.
+	\item $\Z$ is a torsion-free $\Z$-module because $\Z$ is an integral domain. For $n\in \Z$, if there were some non-zero $m_n \in \Z$ such that $m_n \cdot n = 0$, $n$ must be 0. Thus $\Z\tor = \{0\}$.
+	\item For $(k, \overline{m})\in (\Z\times \Z_n)\tor$, suppose $0\neq \alpha \in \Z$ exists, such that $\alpha \cdot (k, \overline{m}) = 0$. Then $\alpha k =0$ and $\alpha \overline{m} = 0$. Since $\Z$ is an integral domain, we directly see that $k = 0$, and choosing $\alpha = n$ gives $\alpha\overline{m} = n\overline{m} = \overline{0}$.\footnote{We need $n>1$ here.} Now we have $(k, \overline{m})\in \{0\}\times \Z_n$. Therefore, $(\Z\times \Z_n)\tor \subseteq \{0\}\times \Z_n$.\\
+	We also see that $\{0\}\times \Z_n \subseteq (\Z\times\Z_n)\tor$ because $(0, \overline{m}) \in (\Z\times\Z_n)\tor$.
+\end{enumerate}~
+\\
+\prob{1.4.10.}
+\begin{enumerate}
+	\item For two $R$-modules $M_1$, $M_2$, let $x_1, x_2\in M_1$, $y_1, y_2\in M_2$, and $r\in R$. On $M_1\times M_2$, define addition as
+	$$(x_1, y_1) + (x_2, y_2) = (x_1+x_2, y_1+y_2)$$
+	and $R$-multiplication as
+	$$r(x_1, y_1) = (rx_1, ry_1)$$
+	Then it is easy to check that $M_1\times M_2$ is indeed an $R$-module.
+	\item For two $R$-algebras $\mc{A}$, $\mc{B}$, let $a_1, a_2\in \mc{A}$, $b_1, b_2\in \mc{B}$, and $r\in R$. On $\mc{A}\times \mc{B}$, define addition as
+	$$(a_1, b_1) + (a_2, b_2) = (a_1+a_2, b_1+b_2)$$
+	, multiplication as
+	$$(a_1, b_1)\cdot(a_2, b_2) = (a_1a_2, b_1b_2)$$
+	and finally $R$-multiplication as
+	$$r(a_1, b_1) = (ra_1, rb_1)$$
+	Then it is easy to check that $\mc{A}\times\mc{B}$ is indeed an $R$-algebra.
+\end{enumerate}~
+\\
 
 \subsection{Isomorphism}
 
