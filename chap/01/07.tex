@@ -36,19 +36,19 @@ We notice that we only need to check the outputs of $\varphi$ (homomorphism) for
 \\
 \thm{1.7.9.} (\textbf{Linear Extension Theorem}) Let $V$ be an $F$-vector space with an $F$-basis $\mf{B} = \{v_i \mid i\in I\}$. Then for every $F$-vector space $W$ and for every subset $\{w_i\mid i\in I\}$ of $W$, there exists a unique $F$-linear map $\varphi:V\ra W$ such that $\varphi(v_i) = w_i$ for all $i\in I$.\\
 \\
-이 삼각형은 함수 $f:\mf{B}\ra W$ 를 linear map $\varphi: V\ra W$ 로 \textbf{확장}했다는 의미이다. $\iota$ 는 inclusion map. 오른쪽 삼각형은 다음 명제를 해석한 것이다.
+이 삼각형은 함수 $f:\mf{B}\ra W$ 를 linear map $\varphi: V\ra W$ 로 \textbf{확장}했다는 의미이다. $\imath$ 는 inclusion map. 오른쪽 삼각형은 다음 명제를 해석한 것이다.
 $$
 \begin{tikzcd}
-\mf{B} \arrow{rr}{\iota} \arrow[swap]{dr}{f} & \arrow[d, phantom, "\circlearrowright"]& V\arrow{dl}{\varphi} \\
+\mf{B} \arrow{rr}{\imath} \arrow[swap]{dr}{f} & \arrow[d, phantom, "\circlearrowright"]& V\arrow{dl}{\varphi} \\
 & W  &
 \end{tikzcd} \qquad
 \begin{tikzcd}
-S \arrow{rr}{\iota} \arrow[swap]{dr}{f} & \arrow[d, phantom, "\circlearrowright"]& \Z\arrow{dl}{\varphi} \\
+S \arrow{rr}{\imath} \arrow[swap]{dr}{f} & \arrow[d, phantom, "\circlearrowright"]& \Z\arrow{dl}{\varphi} \\
 & G  &
 \end{tikzcd}
 $$
 \\
-\prop{1.7.10.} Put $\{1\}\subset\Z$. Then for every group $G$ and for every function $f:S\ra G$, there exists a unique group homomorphism $\varphi: \Z\ra G$ such that $\varphi\circ \iota = f$.\\
+\prop{1.7.10.} Put $\{1\}\subset\Z$. Then for every group $G$ and for every function $f:S\ra G$, there exists a unique group homomorphism $\varphi: \Z\ra G$ such that $\varphi\circ \imath = f$.\\
 \\
 \prob{1.7.11.} For every $R$-algebra $\mc{A}$ with $1_\mc{A}$, and for every $\alpha\in \mc{A}$, there exists a unique $R$-algebra homomorphism $\mc{E}_\alpha:R[t]\ra\mc{A}$ such that $\mc{E}_\alpha(t) = \alpha$ and $\mc{E}_\alpha(1)=1$.\\
 This homomorphism $\mc{E}_\alpha$ is in fact the \textbf{evaluation homomorphism} defined as $\mc{E}_\alpha(f(t)) = f(\alpha)$.
@@ -68,7 +68,7 @@ This homomorphism $\mc{E}_\alpha$ is in fact the \textbf{evaluation homomorphism
 \end{enumerate}~
 \pagebreak\\
 \prob{1.7.14.} (\textbf{Division Algorithm in $R[t]$}) \textit{Let $R$ be a commutative ring with 1 and $f(t), g(t)\in R[t]$. If the leading coefficient of $g(t)$ is a unit, there exists unique $q(t), r(t)\in R[t]$ such that
-$$f(t) = q(t)g(t)+r(t) \qquad (\deg r < \deg g)$$
+	$$f(t) = q(t)g(t)+r(t) \qquad (\deg r < \deg g)$$
 }
 \pf. (\textit{Existence})
 \begin{itemize}
