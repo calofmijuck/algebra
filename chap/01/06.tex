@@ -1,3 +1,67 @@
 \subsection{Homomorphism}
-
+\defn{1.6.1.}
+\begin{enumerate}
+	\item $A$, $B$ 가 group 일 때 (additive notation), 함수 $\varphi: A\ra B$ 가 다음 조건
+	$$\varphi(x+y) = \varphi(x)+\varphi(y) \qquad(x, y\in A)$$
+	을 만족하면, $\varphi$ 를 \textbf{group homomorphism} 이라고 부른다.
+	\item $R$, $S$ 가 ring 일 때, 함수 $\varphi: R\ra S$ 가 다음 조건
+	$$\varphi(a+b) = \varphi(a)+\varphi(b) \qquad \varphi(ab)=\varphi(a)\varphi(b) \qquad(a, b\in R)$$
+	을 만족하면, $\varphi$ 를 \textbf{ring homomorphism} 이라고 부른다.
+	\item $M$, $N$ 이 $R$-module 일 때 , 함수 $\varphi: M\ra N$ 이 다음 조건
+	$$\varphi(x+y) = \varphi(x)+\varphi(y) \qquad \varphi(rx) = r\varphi(x) \qquad(x, y\in M, r\in R)$$
+	을 만족하면, $\varphi$ 를 \textbf{$R$-module homomorphism} 이라고 부른다.
+	\item $\mc{A}$, $\mc{B}$ 가 $R$-algebra 일 때, $\varphi:\mc{A}\ra\mc{B}$ 가 ring homomorphism 이면서 $R$-module homomorphism 이면, $\varphi$ 를 \textbf{$R$-algebra homomorphism} 이라고 부른다.
+\end{enumerate}~
+\\
+Homomorphism 은 \textbf{연산 구조를 보존하는 함수}이다.\\
+\\
+\prob{1.6.2.}
+\begin{enumerate}
+	\item $\varphi(0+0) =\varphi(0) +\varphi(0)$.
+	\item $0 = \varphi(0) = \varphi(x + (-x)) = \varphi(x) + \varphi(-x)$.
+\end{enumerate}~
+\\
+\defn{1.6.3.} \textbf{Kernel} 과 \textbf{image} 는 (abelian) group homomorphism 의 경우에만 정의하면 충분하다.\footnote{Ring, $R$-module, $R$-algebra 모두 덧셈에 대해서는 abelian group 이었다.} $\varphi:A\ra B$ 가 abelian group homomorphism 이면,
+$$\ker \varphi = \varphi\inv(0)\qquad \im\varphi = \varphi(A)$$
+로 정의한다.\\
+\\
+\prob{1.6.4.} Everything else is trivial except for (3)\mimp(2). If $\varphi(x) = \varphi(y)$, $0 = \varphi(x)-\varphi(y) = \varphi(x-y)$. And by (3), $x-y = 0$. Thus $x=y$.\\
+\\
+\defn{1.6.6.} Let $\varphi: X\ra Y$ be a $\square\square$-homomorphism.
+\begin{enumerate}
+	\item If $\varphi$ is injective, $\varphi$ is a $\square\square$-\textbf{monomorphism}.
+	\item If $\varphi$ is surjective, $\varphi$ is a $\square\square$-\textbf{epimorphism}.
+	\item If $\varphi$ is bijective, $\varphi$ is a $\square\square$-isomorphism.
+	\item If $X = Y$, $\varphi$ is a $\square\square$-\textbf{endomorphism}.
+	\item If $\varphi$ is a bijective endomorphism, it is a $\square\square$-\textbf{automorphism}.
+\end{enumerate}~
+\\
+\prob{1.6.9.} For $\square\square$ $X$, \textbf{automorphism group} $\aut(X)$ is defined by
+$$\aut(X) = \{\varphi: X\ra X \mid \varphi \text{ is an } \square\square\text{-automorphism}\}$$
+This group has composition as its binary operation. Since the composition of two automorphisms is also an automorphism, the operation is closed under $\aut(X)$. Associativity holds trivially, and $\aut(X)$ has an identity element $id_X$. Finally, for $\varphi \in \aut(X)$, its inverse element $\varphi\inv$ exists.\\
+\\
+\ex{1.6.10.} Consider the \textbf{zero map} $0:X\ra Y$ defined as $$0(x) = 0 \qquad(x\in X)$$
+If $X$ is a ring, this map is indeed a ring homomorphism. If $X$ is an $R$-module, this map is indeed an $R$-module homomorphism. Thus, we notice that it is not necessary for a ring homomorphism $\varphi$ to have the condition $\varphi(1_X)=1_Y$.\\
+\\
+\prob{1.6.11.}
+\begin{enumerate}
+	\item If $\varphi(1) = 0$, $\varphi(x) = \varphi(1\cdot x ) = \varphi(1)\varphi(x) = 0$. Thus $\varphi = 0$.
+	\item $\varphi(1) = \varphi(1\cdot 1)=\varphi(1)\varphi(1)$. Then $\varphi(1)(\varphi(1)-1_S) = 0$. Since $S$ is an integral domain\footnote{Integral domains always have a unity.}, $\varphi(1) = 0$ or $\varphi(1) = 1_S$.
+	\item Direct result of (1), (2).
+\end{enumerate}~
+\\
+\obs{1.6.12.} Suppose $1\in R$, $1\in S$. Let $\varphi :R\ra S$ be a ring homomorphism with $\varphi(1_R) = 1_S$. If $a\in R\cross$, then $\varphi(a)\in S\cross$ ($\varphi(a)\neq 0$) and 
+$$\varphi(a)\inv  = \varphi(a\inv)$$
+\pf. $$\varphi(a) \cdot \varphi(a\inv) = \varphi(a\cdot a\inv) = \varphi(1) = 1$$
+The key point is that $\varphi(1) = 1\neq 0$.\\
+\\
+\obs{1.6.13.} Let $F, K$ be a field and $\sigma: F\ra K$ be a field homomorphism with $\sigma(1_F)=1_K$. Then $\sigma$ is a monomorphism. For this reason, we call a field homormophism with $\sigma(1) = 1$ as a (\textbf{field}) \textbf{embedding}.\\
+\pf. Show that $\ker \sigma = {0}$.\\
+\\
+\prob{1.6.14.}
+\begin{enumerate}
+	\item No.
+	\item No.
+	\item ?
+\end{enumerate}
 \pagebreak
