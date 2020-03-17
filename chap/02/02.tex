@@ -1,3 +1,101 @@
 \subsection{Polynomial Algebra and Group Algebra}
-
+\prob{2.2.2.}
+\begin{enumerate}
+	\item Let $\ds a = \sum_{x\in S} r_x x$, $\ds b = \sum_{x\in S}s_x x$ where $r_x, s_x, r, s\in R$. Define
+	$$a+b = \sum_{x\in S}(r_x+s_x)x \qquad ra = \sum_{x\in S}(rr_x)x$$
+	Now check if $\mc{F}_R(S)$ is an $R$-module.
+	\item Define $\varphi: S\ra \mc{F}_R(S)$ by $\varphi(x) = \ds \sum_{y\in S} r_{xy} x$ where $r_{xy} = 1$ if and only if $x = y$, 0 otherwise. Then $\varphi$ is a monomorphism. Since $\im \varphi \subseteq \mc{F}_R(S)$, $\im \varphi \approx S$.
+	\item $S$ spans $\mc{F}_R(S)$, and the set $S$ is $R$-linearly independent.
+\end{enumerate}~
+\\
+\prob{2.2.5.}
+\begin{enumerate}
+	\item $R[s, t]$ is a polynomial of $s, t$. $(R[s])[t]$ is a polynomial of $t$ where its coefficients are a polynomial of $s$. ($(R[t])[s]$ can be understood in the same way.) Any polynomial from $R[s, t]$ can be rearranged with respect to $t$. When rearranged, the coefficients will be a polynomial of $s$. This process can also be reversed. $R[s, t] = (R[t])[s] = (R[s])[t]$.
+	\item The statement can also be explained similarly.
+\end{enumerate}~
+\\
+\prob{2.2.6.} ???\\
+\\
+\defn{2.2.7.} For group $G$, $R[G] = \mc{F}_R(G)$ is called [\textbf{group algebra} of $G$ over $R$]. The multiplication between $R$-basis elements of $R[G]$ (which is actually the elements of $G$) is defined as the binary operation from $G$, and linearly extended to $R[G]$ to define multiplication for $R[G]$. Now since the binary operation from $G$ satisfies associativity, $R[G]$ is an $R$-algebra.\\
+\\
+\prob{2.2.10}
+\begin{enumerate}
+	\item Sufficient to check at the basis elements. Since $G$ is a commutative group, multiplication between $R$-basis elements of $R[G]$ will also satisfy commutativity.
+	\item $(\overline{0} - \overline{1})(\overline{1}-\overline{0}) = \overline{0}\cdot \overline{1} - \overline{0}\cdot\overline{0} - \overline{1}\cdot\overline{1}+\overline{1}\cdot\overline{0} = \overline{1} - \overline{0} - \overline{0} + \overline{1} = \overline{0}$. (The multiplication is the binary operation of $\Z_2$, which is actually addition mod 2.)
+	\item $G$ is isomorphic to $X = \{1_R\cdot g \mid g\in G\}$, with isomorphism $\varphi: G\ra X$, defined as $$\varphi(g) = 1_R\cdot g \qquad (g\in G)$$
+	Also, since every element of $G$ has an inverse, all $g\in G$ has an inverse in $R[G]$, which is $1_R\cdot g\inv$. Thus $G\subseteq R[G]\cross$.
+\end{enumerate}~
+\\
+\defn{2.2.11.} Let $G$ be a group and $F$ be a field. A [\textbf{linear representation}\footnote{Or \textbf{matrix representation}} of $G$ over $F$] is defined as a group  homomorphism $$\varphi: G\ra \GL_n(F)$$
+also, for $n$-dimensional $F$-vector space $V$, we can identify $\GL_n(F) \approx \GL(V)$. Thus the group homomorphism $$\varphi: G\ra \GL(V)$$ is also called a $n$-dimensional [(\textbf{linear}) \textbf{representation} of $G$ over $F$]. Here, $V$ is called the \textbf{representation space}.\\
+\\
+\prop{2.2.18.} For group $G$ and field $F$, 
+\begin{center}
+	\textbf{[$F[G]$-module] = [representation of $G$ over $F$]}
+\end{center}
+\pf. First, let's try to construct an $F[G]$-module from a given [representation of $G$ over $F$], $\varphi: G\ra \GL(V)$. Since $V$ is an $F$-vector space, why not derive that $V$ is an $F[G]$-module? To do this, we would need to define multiplication between $V$ and $F[G]$. Since we have linear extension, let's define the multiplication for the elements in the $F$-basis of $F[G]$.\\
+For $g\in G$ and $v\in V$, $g\cdot v$ should be an element of $V$. Define
+$$g\cdot v = \varphi(g)(v) \qquad (g\in G, v\in V)$$
+Note that $\varphi(g)$ is a linear map from $V$ to $V$, so $\varphi(g)(v)\in V$. Then, we linearly extend to get
+$$\left(\sum_{g\in G} a_g g\right)\cdot v = \sum_{g\in G} a_g (g\cdot v) \qquad (v\in V, a_g\in F)$$
+({\bfseries \sffamily Exercise 2.2.15.}) Now we show that $V$ is an $F[G]$-module. Let $r = \ds \sum_{g\in G} a_g g$, $s = \ds \sum_{g\in G}b_g g \in F[G]$ ($a_g, b_g \in F$) and $x, y\in V$.
+\begin{itemize}
+	\item {\sffamily (M4)} $(V, +)$ is indeed an abelian group.
+	\item {\sffamily (M1)}
+	$$\begin{aligned}
+	r(x+y) &= \left(\sum_{g\in G} a_gg\right)(x+y) = \sum_{g\in G}a_g (g\cdot (x+y)) \\
+		&=\sum_{g\in G} a_g \big(\varphi(g)(x+y)\big) = \sum_{g\in G} a_g \big(\varphi(g)(x) + \varphi(g)(y)\big) \qquad (\because \varphi(g) \text{ is a linear map})\\
+		&=\sum_{g\in G} a_g \varphi(g)(x) + \sum_{g\in G} a_g\varphi(g)(y) \qquad (\because V \text{ is an } F\text{-vector space})\\
+		&=\sum_{g\in G}a_g (g\cdot x) + \sum_{g\in G}a_g (g\cdot y) = rx + ry
+	\end{aligned}$$
+	\item {\sffamily (M2)}
+	$$\begin{aligned}
+	(r+s)x &= \left(\sum_{g\in G} (a_g +b_g) g\right)x = \sum_{g\in G}(a_g+b_g)(g\cdot x)=\sum_{g\in G} (a_g+b_g) \varphi(g)(x) \\
+		&= \sum_{g\in G} a_g \varphi(g)(x) + \sum_{g\in G} b_g \varphi(g)(x) \qquad (\because V \text{ is an } F\text{-vector space})\\
+		&=\sum_{g\in G} a_g (g\cdot x) + \sum_{g\in G}b_g (g\cdot x) = rx + sx
+	\end{aligned}$$
+	\item {\sffamily (M3)}
+	$$\begin{aligned}
+	r(sx) &= \sum_{g\in G} a_g (g\cdot sx) = \sum_{g\in G} a_g \varphi(g)(sx) = \sum_{g\in G}a_g \varphi(g)\left(\sum_{h\in G} b_h (h\cdot x)\right)\\
+		&=\sum_{g\in G}a_g \sum_{h\in G} b_h \varphi(g)\left(h\cdot x\right) \qquad (\because \varphi(g) \text{ is a linear map}, h\cdot x \in V)\\
+		&=\sum_{g\in G}a_g \sum_{h\in G} b_h \varphi(g)\big(\varphi(h)(x)\big) \\
+		&=\sum_{g, h \in G}a_gb_h \big(\varphi(g)\varphi(h)\big)(x) \qquad (\because \text{ composition is associative})\\
+		&=\sum_{g, h\in G} a_gb_h \varphi(gh)(x) = \sum_{g, h\in G} a_gb_h (gh\cdot x) \qquad (\because \varphi \text{ is a group homomorphism})\\
+		&= \left(\left(\sum_{g\in G} a_g g\right)\left(\sum_{h\in H} b_h h\right)\right)x = (rs)x
+	\end{aligned}$$
+\end{itemize}
+Thus $V$ is an $F[G]$-module.\\
+\\
+Conversely, we try to construct a group homomorphism $\psi$ from a given $F[G]$-module $W$. We immediately see that $F$ can be identified as a subset of $F[G]$, so $W$ can be considered as an $F$-vector space. Moreover, it seems that $W$ should be the representation space, so $\psi: G\ra \GL(W)$. To define $\psi$, the output $\psi(g)$ ($g\in G$) will be a invertible linear map, so we describe $\psi(g)$ by the output at $w\in W$. Define
+$$\psi(g)(w) = g\cdot w = (1_F\cdot g)w \qquad (w\in W)$$
+({\bfseries \sffamily Exercise 2.2.16.}) Now we show that $\psi$ is a representation of $G$ over $F$.
+\begin{itemize}
+	\item Is $\psi(g): W\ra W$ an $F$-linear map? Let $x, y\in W$ and $a\in F$. Since we considered $W$ as an $F$-vector space, $ax$ will be defined as $ax = (a\cdot 1_G)x$ since $a\cdot 1_G \in F[G]$.
+	$$\begin{aligned}
+	\psi(g)(x+ay) &= (1_F\cdot g)(x + ay) = (1_F\cdot g)x + (1_F \cdot g)(ay) \qquad (\because W \text{ is an } F[G]\text{-module})\\
+	&=(1_F\cdot g)x + (1_F \cdot g)((a\cdot 1_G)y)\\
+	&=(1_F\cdot g)x + \big((1_F\cdot g)(a\cdot 1_G)\big)y\qquad (\because W \text{ is an } F[G]\text{-module})\\
+	&=\psi(g)(x) + \big((1_F\cdot a)(g\cdot 1_G)\big)y \qquad (\because \text{binary operation of }F[G])\\
+	&=\psi(g)(x) + \big((a\cdot 1_F)(1_G\cdot g)\big)y \\
+	\end{aligned}
+	$$
+	$$\begin{aligned}
+	\hphantom{\psi(g)(x+ay)}&\hphantom{= (1_F\cdot g)(x + ay) = (1_F\cdot g)x + (1_F \cdot g)(ay) \qquad (\because W \text{ is an } F[G]\text{-module})}\\
+	&= \psi(g)(x) + \big((a\cdot 1_G)(1_F\cdot g)\big)y\qquad (\because \text{binary operation of }F[G])\\
+	&= \psi(g)(x) + (a\cdot 1_G)\left((1_F\cdot g)y\right) \qquad (\because W \text{ is an } F[G]\text{-module})\\
+	&=\psi(g)(x) + (a\cdot 1_G)\psi(g)(y) = \psi(g)(x) + a\psi(g)(y)
+	\end{aligned}
+	$$
+	\item Is $\psi(g)\in \GL(W)$? Probably, $\psi(g)\inv = \psi(g\inv)$. For $w\in W$,
+	$$(\psi(g)\circ \psi(g\inv))(w) = \psi(g)(g\inv\cdot w) = g\cdot (g\inv\cdot w) = (g\cdot g\inv)w = w$$
+	Since $W$ is an $F[G]$-module. Similarly,
+	$$(\psi(g\inv)\circ \psi(g))(w) = \psi(g\inv)(g\cdot w) = g\inv\cdot(g\cdot w) = (g\inv \cdot g)w = w$$
+	Thus $\psi(g)\inv = \psi(g\inv)$ and $\psi(g)\in \GL(W)$.
+	\item Is $\psi: G\ra \GL(W)$ a group homomorphism? For $g, h\in G$ we must check if $\psi(gh)=\psi(g)\circ\psi(h)$. We evaluate both sides at $w\in W$ to validate it.
+	$$\begin{aligned}
+	\psi(gh)(w) &= (gh)w = ((1_F\cdot g)(1_F\cdot h))w = (1_F\cdot g)((1_F\cdot h)w)\\
+	&= (1_F\cdot g)\big(\psi(h)(w)\big) = \psi(g)\big(\psi(h)(w)\big) = \big(\psi(g)\circ\psi(h)\big)(w)
+	\end{aligned}$$
+\end{itemize}
+Thus $\psi: G\ra \GL(W)$ is a representation of $G$ over $F$. \qed
 \pagebreak
