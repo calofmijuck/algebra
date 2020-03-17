@@ -1,3 +1,118 @@
 \subsection{Quaternion Algebra $\bb{H}$}
-
+\defn{2.1.1.} \textbf{(Quaternion Algebra $\bb{H}$)} Consider a $4$-dimensional $\R$-vector space that has a set of 4 formal symbols $\{1, \rmbf{i}, \rmbf{j}, \rmbf{k}\}$ as its $\R$-basis.
+$$\bb{H} = \{a1+b\rmbf{i}+c\rmbf{j} + d\rmbf{k} \mid a, b, c, d\in \R\}$$
+Now define multiplication as ($a, b, c, d, x, y, z, w\in \R$)
+$$\begin{aligned}
+&(a+b\rmbf{i}+c\rmbf{j}+d\rmbf{k})\cdot(x+y\rmbf{i}+z\rmbf{j}+w\rmbf{k}) \\=&\,(ax-by-cz-dw) + (ay+bx+cw-dz)\rmbf{i}\\&+(az-bw+cx+dy)\rmbf{j} + (aw+bz-cy+dx)\rmbf{k}
+\end{aligned}$$
+We denote $\bb{H}$ as \textbf{quaternion algebra}.\\
+\\
+How do we check \textbf{associativity}?\\
+\\
+\textbf{\sffamily Notation 2.1.2.} $V$ 가 field $F$ 위의 $F$-vector space 일 때, $\mf{B} = \{v_i \mid i\in I\}$ 를 $V$ 의 $F$-basis 라 하자. 그러면 $V$ 의 임의의 vector $v\in V$ 는
+$$v = \sum_{i\in I} a_i v_i \qquad (a_i\in F)$$
+의 꼴로 유일하게 나타낼 수 있다. 이 때, 유한 개의 $i\in I$ 를 제외하면 $a_i$ 는 모두 0 이다.\footnote{This sum is a finite sum.}\\
+\\
+\defn{2.1.3.} \textbf{(Abstract Construction of an $F$-algebra)} Let $F$ be a field, and let $\mc{B} = \{v_i\mid i\in I\}$ be an $F$-basis of an $F$-vector space $V$. We first define multiplication over $V$ between the basis vectors by
+$$v_i\cdot v_j = \sum_{l\in I} s_{ijl}v_l \qquad (i, j\in I)$$
+(Note that $s_{ijk}\in F$ and for every given $i, j$, there are only a finite number of non-zero $s_{ijl}$\footnote{$s_{ijl}$ is called a \textbf{structure constant}.}) and \textbf{linearly extend} it to $V$.
+$$\left(\sum_{i\in I} a_iv_i\right)\cdot \left(\sum_{j\in I} b_jv_j\right) = \sum_{l\in I}\left(\sum_{i,j\in I} a_ib_js_{ijl}\right)v_l\qquad (a_i, b_j\in F)$$\\
+\\
+\prop{2.1.4.} In {\sffamily Definition 2.1.3}, if associativity holds for the basis vectors
+$$v_i\cdot(v_j\cdot v_k) = (v_i\cdot v_j)\cdot v_k \qquad (i, j, k\in I)$$
+in other words, if the structure constants $s_{ijk}$ are selected this way, $V$ is an $F$-algebra.\\
+\\
+Now we can prove that $\bb{H}$ is indeed an $\R$-algebra.\\
+\\
+\prob{2.1.5.}
+\begin{enumerate}
+	\item Trivial.
+	\item Check!
+	\item Also check.
+	\item Check associativity for $\rmbf{i}, \rmbf{j}, \rmbf{k}$, since if $1$ is included, it automatically holds.
+\end{enumerate}~
+\\
+\prob{2.1.6.}
+\begin{itemize}
+	\item For $x, y\in \C$ and $r\in \R$, check that $\imath$ is a homomorphism. $$\imath(x + ry) = \imath(x) + r\imath(y) \qquad \imath(xy) = \imath(x)\imath(y)$$
+	\item \textit{Injective}? Yes. If $\imath(x) = \imath(y)$ for $x, y\in \C$, $x = y$.
+\end{itemize}~
+\\
+\defn{2.1.7.} Define \textbf{conjugation} and \textbf{absolute value} on $\bb{H}$ as ($a, b, c, d\in \R$)
+\begin{itemize}
+	\item $\conj{a+b\rmbf{i}+c\rmbf{j}+d\rmbf{k}} = a-b\rmbf{i}-c\rmbf{j}-d\rmbf{k}$
+	\item $\abs{a+b\rmbf{i}+c\rmbf{j}+d\rmbf{k}} = \sqrt{a^2+b^2+c^2+d^2}$
+\end{itemize}~
+\\
+\prob{2.1.8.} For $\alpha, \beta \in \bb{H}$,
+\begin{enumerate}
+	\item $\conj{\conj{\alpha}} = \alpha$. Trivial.
+	\item $\conj{\alpha+\beta} = \conj{\alpha}+  \conj{\beta}$. Trivial.
+	\item $\conj{\alpha\beta} = \conj{\beta}\cdot\conj{\alpha}$. Enough to check between the basis vectors.
+	\item $\alpha\conj{\alpha} = \abs{\alpha}^2 = \conj{\alpha}\alpha$. Trivial.
+	\item $\abs{\alpha\beta} = \abs{\alpha}\cdot\abs{\beta}$.
+\end{enumerate}~
+\\
+\prop{2.1.9.} $\R$-algebra $\bb{H}$ is a skew-field.\\
+\\
+\prob{2.1.10.} By 2.1.5 (2), the operation is closed in $Q_8$. $Q_8$ has an identity, associativity holds, every element has an inverse.\\
+\\
+\prob{2.1.11.} Let $t = a+b\rmbf{i}+c\rmbf{j}+d\rmbf{k}$ ($a, b, c, d\in \R$) and solve $t^2+1=0$, for $a, b, c, d$. Then we have $a = 0$ and $b^2+c^2+d^2 = 1$. Thus there are infinitely many roots in $\bb{H}$.\\
+\\
+\defn{2.1.12.} For $R$-algebra $\mc{A}$, the \textbf{center} of $\mc{A}$ is denoted as $Z(\mc{A})$ and defined as
+$$Z(\mc{A}) = \{x\in \mc{A} \mid xy=yx \text{ for all } y\in \mc{A}\}$$
+\\
+\prob{2.1.13.}
+\begin{enumerate}
+	\item (\mimp) Trivial.\\
+	(\mimpb) From $\mf{B} = \{v_i \mid i\in I\}$, linearly extend to $\mc{A}$. For $\ds v = \sum_{i\in I} a_iv_i\in \mc{A}$, ($a_i\in F$)
+	$$zv = z\cdot\left(\sum_{i\in I} a_iv_i\right) = \sum_{i\in I} a_i(z\cdot v_i) = \sum_{i\in I} a_i (v_i\cdot z) = \left(\sum_{i\in I} a_iv_i\right)\cdot z = vz$$ 
+	\item (\mimp) Trivial.\\
+	(\mimpb) Let $\mf{B} = \{v_i \mid i\in I\}$ and $\ds a = \sum_{i\in I} a_iv_i, b = \sum_{j\in I} b_jv_j\in \mc{A}$ $(a_i, b_j\in F)$, then
+	$$\begin{aligned}
+		ab &= \left(\sum_{i\in I} a_iv_i\right)\left(\sum_{j\in I} b_jv_j\right) = \sum_{i,j\in I} (a_ib_j)(v_i\cdot v_j) \\&= \sum_{i,j\in I}(b_ja_i)(v_j\cdot v_i) = \left(\sum_{i\in I} a_iv_i\right)\left(\sum_{j\in I} b_jv_j\right) = ba
+	\end{aligned}$$
+	Note that $a_ib_j = b_ja_i$ since $F$ is a field.
+\end{enumerate}~
+\\
+\prob{2.1.14.}
+\begin{enumerate}
+	\item For all $x\in \mc{A}$, $(r\cdot 1_\mc{A})x = 1_\mc{A}\cdot (rx) = (rx)\cdot 1_{\mc{A}} = x(r\cdot 1_\mc{A})$. Thus $r\cdot 1_\mc{A}\in Z(\mc{A})$. ($r\in R$)
+	\item Calculate to check that the elements of $Z(\bb{H})$ can be identified as $\R$. And, $\R\subseteq Z(\bb{H})$.
+\end{enumerate}~
+\\
+\prob{2.1.15.}\\
+(1\mimp2) (If such homomorphism $\alpha: R\ra \mc{A}$ existed and $\alpha(1) = 1$ ...... $\alpha(n) = n$ ?) Set $$\alpha(r) = r\cdot 1_\mc{A} \qquad (r\in R)$$
+We first show that $\alpha$ is a ring homomorphism. For $r, s\in R$,
+$$\alpha(r+s) = (r+s)\cdot 1_\mc{A} = r\cdot 1_\mc{A} + s\cdot1_\mc{A} = \alpha(r) + \alpha(s)$$
+since $(A, +, \cdot)$ is an $R$-module. Also,
+$$\alpha(rs) = (rs)\cdot 1_\mc{A} = r(s\cdot 1_\mc{A}) = r(1_\mc{A}\cdot (s\cdot 1_\mc{A})) = (r\cdot 1_\mc{A})\cdot (s\cdot 1_\mc{A}) = \alpha(r)\alpha(s)$$
+where the second equality holds because $(A, +, \cdot)$ is an $R$-module, and the fourth holds because $\mc{A}$ is an $R$-algebra. Thus $\alpha$ is a ring homomorphism and $\im \alpha \subseteq Z(\mc{A})$ by {\sffamily Problem 2.1.14} (1).
+\\
+\\
+(2\mimpb1) Since $\mc{A}$ is already a ring, we must show that $(\mc{A}, +, \cdot)$ is an $R$-module and $\mc{A}$ satisfies condition {\sffamily (A3)}. But we haven't defined $\cdot$ (multiplication between $R$ and $\mc{A}$)! Thus we define
+$$r\cdot x =rx= \alpha(r)x \qquad (r\in R, x\in \mc{A})$$
+and show that $\mc{A}$ is an $R$-module. For $r, s\in R$ and $x, y\in \mc{A}$,
+\begin{itemize}
+	\item $ r(x+y) = \alpha(r)(x+y) = \alpha(r)x + \alpha(r)y = rx + ry $
+	\item $(r+s)x = \alpha(r+s)x = (\alpha(r) + \alpha(s))x = \alpha(r)x + \alpha(s)x = rx+sx$
+	\item $(rs)x = \alpha(rs)x = (\alpha(r)\alpha(s))x = \alpha(r)\big(\alpha(s)x\big) = r(sx)$
+\end{itemize}
+Thus $\mc{A}$ is an $R$-module, and condition {\sffamily (A3)} holds because
+\begin{itemize}
+	\item $(rx)y = (\alpha(r)x)y = \alpha(r)(xy) = r(xy)$ (Associativity)
+	\item $(rx)y = (\alpha(r)x)y = (x\alpha(r))y = x(\alpha(r)y) = x(ry)$ ($\im \alpha \subseteq Z(\mc{A})$)
+\end{itemize}
+Thus $\mc{A}$ is an $R$-algebra, and $\alpha$ is automatically $R$-linear, since for $x, y, r\in R$,
+$$\alpha(x +ry) = \alpha(x) + \alpha(ry) = \alpha(x) + \alpha(r)\alpha(y) = \alpha(x) + r\alpha(y)$$
+Now since $\alpha(1) = 1$, setting $x = 0$, $y=1$ gives $\alpha(r) = 0 + r\cdot 1_\mc{A} = r\cdot 1_\mc{A}$.\\
+\\
+\prob{2.1.16.} Define a ring homomorphism $\alpha : R[t]\ra \mc{A}[t]$ such that $\alpha(1) = 1_{\mc{A}[t]}$ by
+$$\alpha(f(t)) = f(t)\cdot 1_{\mc{A}[t]} \qquad (f(t)\in R[t])$$
+\\
+\prob{2.1.17.}
+\begin{enumerate}
+	\item $\beta \circ id = \varphi \circ \alpha$
+	\item ???
+\end{enumerate}~
 \pagebreak
